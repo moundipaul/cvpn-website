@@ -6,35 +6,43 @@
     <title>CVPN - Cercle pour la Promotion du Village de Nkoupa Ngagnou</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; text-align: center; background-color: #f4f4f4; }
-        header { background: #004080; color: white; padding: 20px; font-size: 24px; }
-        nav { background: #003366; padding: 10px; }
+        header { background: #004080; color: white; padding: 20px; font-size: 24px; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); }
+        nav { background: #003366; padding: 10px; margin-top: 70px; }
         nav a { margin: 0 15px; text-decoration: none; color: white; font-weight: bold; }
         section { padding: 20px; }
         .container { max-width: 900px; margin: auto; background: white; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
         footer { background: #004080; color: white; padding: 10px; position: relative; bottom: 0; width: 100%; }
+        .logo { width: 80px; position: absolute; left: 20px; top: 10px; }
     </style>
 </head>
 <body>
     <header>
+        <img src="logo.png" alt="Logo CVPN" class="logo">
         <h1>CVPN - Cercle pour la Promotion du Village de Nkoupa Ngagnou</h1>
     </header>
     <nav>
         <a href="#accueil">Accueil</a>
         <a href="#missions">Nos Missions</a>
+        <a href="#projets">Nos Projets</a>
         <a href="#contact">Contact</a>
     </nav>
     <div class="container">
         <section id="accueil">
             <h2>Bienvenue</h2>
-            <p>Nous œuvrons pour améliorer les conditions de vie à Nkoupa Ngagnou grâce à des initiatives locales en santé, éducation et bien-être.</p>
+            <p>Le CVPN a pour objectif d'améliorer la santé, l'éducation et le bien-être des habitants de Nkoupa Ngagnou.</p>
         </section>
         <section id="missions">
             <h2>Nos Missions</h2>
-            <p>Nous soutenons des projets communautaires, mobilisons des ressources et collaborons avec les autorités locales pour un impact durable.</p>
+            <p>Nous mobilisons des ressources pour soutenir des projets de développement concrets : santé, éducation, infrastructures.</p>
+        </section>
+        <section id="projets">
+            <h2>Nos Projets</h2>
+            <p>🔹 Construction d'un centre de santé<br>🔹 Aide scolaire pour les enfants du village<br>🔹 Développement des infrastructures locales</p>
         </section>
         <section id="contact">
             <h2>Contact</h2>
             <p>Email : <a href="mailto:cvpn.ass2024@gmail.com">cvpn.ass2024@gmail.com</a></p>
+            <p>Siège social : 110 Rue de Tressancourt, 78630 Orgeval, France</p>
         </section>
     </div>
     <footer>

@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CVPN - Cercle pour la Promotion du Village de Nkoupa Ngagnou</title>
   <style>
-    /* ---- COULEURS PRINCIPALES ---- */
+    /* ---- COULEURS PRINCIPALES (ancien code couleur) ---- */
     :root {
-      --main-color: #f26d21;     /* Orange CARE */
-      --secondary-color: #ffffff;/* Blanc */
-      --text-color: #333333;     /* Couleur de texte par défaut */
-      --light-bg: #f4f4f4;       /* Gris clair de fond */
-      --sidebar-bg: #eeeeee;     /* Fond du menu latéral */
+      --header-bg: #004080;   /* Bleu du header */
+      --sidebar-bg: #003366;  /* Bleu plus foncé du menu latéral */
+      --text-color: #ffffff;  /* Blanc pour le texte du header/menu */
+      --body-bg: #f4f4f4;     /* Gris clair du fond */
+      --content-bg: #ffffff;  /* Fond blanc pour le contenu */
     }
 
     /* ---- STYLE GÉNÉRAL ---- */
@@ -19,75 +19,75 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background-color: var(--light-bg);
-      color: var(--text-color);
+      background-color: var(--body-bg);
     }
 
-    /* ---- EN-TÊTE (HEADER) ---- */
+    /* ---- HEADER (EN-TÊTE) ---- */
     header {
-      background-color: var(--main-color);
-      color: var(--secondary-color);
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: fixed;       /* Reste visible en haut de l'écran */
+      background: var(--header-bg);
+      color: var(--text-color);
+      padding: 20px;
+      position: fixed;    /* Reste visible en haut de la page */
       top: 0;
       left: 0;
       right: 0;
-      z-index: 999;          /* Au-dessus du reste */
-    }
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 
-    .header-left {
+      /* Aligne le contenu au centre (logo + titre) */
       display: flex;
       align-items: center;
+      justify-content: center;
     }
 
     .logo {
-      height: 50px;          /* Ajustez la taille du logo */
-      margin-right: 15px;
+      /* Pour un logo « carré » type tuile, on fixe la largeur ET la hauteur */
+      width: 100px;
+      height: 100px;
+      object-fit: cover;  /* S'adapte si l'image n'est pas carrée à la base */
+      margin-right: 20px;
     }
 
-    .header-right a {
-      color: var(--secondary-color);
-      text-decoration: none;
-      font-weight: bold;
-      margin-left: 15px;
+    .site-title {
+      font-size: 24px;
+      margin: 0;
+      text-align: center;
     }
 
-    /* ---- MENU LATÉRAL (SIDEBAR) ---- */
+    /* ---- MENU LATÉRAL ---- */
     .sidebar {
       position: fixed;
-      top: 70px;             /* Correspond à la hauteur approximative du header */
-      left: 0;
-      width: 250px;          /* Largeur du menu latéral */
-      bottom: 0;
+      top: 0;                      /* Commence en haut */
+      left: 0;                     /* Collé à gauche */
+      width: 220px;                /* Largeur du menu */
+      height: 100%;                /* Occupe toute la hauteur de la fenêtre */
       background-color: var(--sidebar-bg);
-      padding: 20px;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      padding-top: 140px;          /* Laisse de la place pour le header (70-100px) */
+      box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+      z-index: 999;                /* Juste sous le header */
     }
 
+    /* Liens du menu latéral */
     .sidebar nav a {
       display: block;
-      padding: 12px 0;
-      text-decoration: none;
       color: var(--text-color);
+      text-decoration: none;
+      padding: 15px 20px;
       font-weight: bold;
       font-size: 16px;
     }
 
     .sidebar nav a:hover {
-      color: var(--main-color);
+      background-color: rgba(255,255,255,0.1);
     }
 
     /* ---- CONTENU PRINCIPAL ---- */
     .content {
-      margin-left: 270px;    /* Laisse la place au menu latéral */
-      padding: 20px;
-      padding-top: 90px;     /* Laisse la place au header fixe */
-      background-color: var(--secondary-color);
-      min-height: 100vh;     /* S'étend sur toute la hauteur de la fenêtre */
-      box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+      margin-left: 220px;   /* Laisse la place au menu latéral */
+      padding: 30px;
+      padding-top: 140px;   /* Pour ne pas passer sous le header fixe */
+      background: var(--content-bg);
+      min-height: 100vh;    /* Occupe au moins toute la hauteur de l’écran */
     }
 
     section {
@@ -95,15 +95,15 @@
     }
 
     h2 {
-      color: var(--main-color);
+      color: var(--header-bg);
       text-align: center;
       margin-top: 0;
     }
 
     /* ---- BOUTON DE DON ---- */
     .btn-donate {
-      background: var(--main-color);
-      color: var(--secondary-color);
+      background: #ff6600;     /* Orange pour ressortir */
+      color: #ffffff;
       padding: 10px 20px;
       text-decoration: none;
       font-size: 18px;
@@ -113,36 +113,28 @@
     }
 
     .btn-donate:hover {
-      background: #d95c1e;  /* Variation plus sombre au survol */
+      background: #e65c00;     /* Variation plus sombre au survol */
     }
 
     /* ---- PIED DE PAGE ---- */
     footer {
-      background: var(--main-color);
-      color: var(--secondary-color);
+      background: var(--header-bg);
+      color: var(--text-color);
       text-align: center;
       padding: 15px;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      /* Pour éviter de recouvrir le contenu, ajustez si nécessaire :
-         vous pouvez le laisser en position: static si vous préférez */
+      /* Si vous voulez qu’il soit toujours visible en bas, vous pouvez utiliser
+         position: fixed; bottom: 0; left: 0; width: 100%; 
+         Mais ici on le laisse statique en bas du contenu. */
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
 
-  <!-- EN-TÊTE -->
+  <!-- HEADER -->
   <header>
-    <div class="header-left">
-      <img src="logo.png" alt="Logo CVPN" class="logo" />
-      <h1>CVPN - Cercle pour la Promotion du Village de Nkoupa Ngagnou</h1>
-    </div>
-    <div class="header-right">
-      <!-- Exemple de lien "Espace donateur" ou icônes à droite -->
-      <a href="#">Espace donateur</a>
-    </div>
+    <img src="logo.png" alt="Logo CVPN" class="logo" />
+    <h1 class="site-title">CVPN - Cercle pour la Promotion du Village de Nkoupa Ngagnou</h1>
   </header>
 
   <!-- MENU LATÉRAL -->
@@ -194,7 +186,7 @@
     </section>
 
     <section id="soutenir">
-      <h2>Nous Soutenir</h2>
+      <h2>Nous soutenir</h2>
       <p>
         Votre aide est précieuse ! Vous pouvez nous aider en effectuant un don 
         ou en devenant membre de notre association.

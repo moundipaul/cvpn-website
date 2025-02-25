@@ -6,14 +6,18 @@
     <title>CVPN - Cercle pour la Promotion du Village de Nkoupa Ngagnou</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
-        header { background: #004080; color: white; padding: 20px; font-size: 24px; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); text-align: center; }
-        nav { background: #003366; padding: 15px; margin-top: 70px; text-align: center; }
+        header { background: #004080; color: white; padding: 20px; font-size: 24px; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); text-align: center; display: flex; align-items: center; justify-content: center; }
+        nav { background: #003366; padding: 15px; margin-top: 90px; text-align: center; }
         nav a { margin: 15px; text-decoration: none; color: white; font-weight: bold; font-size: 18px; }
+        .dropdown { display: inline-block; position: relative; }
+        .dropdown-content { display: none; position: absolute; background-color: white; min-width: 200px; box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); text-align: left; }
+        .dropdown-content a { color: #004080; padding: 10px; display: block; text-decoration: none; font-size: 16px; }
+        .dropdown:hover .dropdown-content { display: block; }
         .container { max-width: 1100px; margin: auto; background: white; padding: 30px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
         section { padding: 30px; text-align: justify; }
         h2 { color: #004080; text-align: center; }
         footer { background: #004080; color: white; padding: 15px; text-align: center; margin-top: 20px; }
-        .logo { width: 100px; position: absolute; left: 20px; top: 10px; }
+        .logo { width: 120px; margin-right: 20px; }
         .btn-donate { background: #ff6600; color: white; padding: 10px 20px; text-decoration: none; font-size: 18px; display: inline-block; margin-top: 10px; border-radius: 5px; }
     </style>
 </head>
@@ -24,23 +28,38 @@
     </header>
     <nav>
         <a href="#accueil">Accueil</a>
-        <a href="#missions">Nos Missions</a>
-        <a href="#projets">Nos Projets</a>
+        <div class="dropdown">
+            <a href="#missions">Nos Actions &#9662;</a>
+            <div class="dropdown-content">
+                <a href="#qui-sommes-nous">Qui sommes-nous ?</a>
+                <a href="#missions">Notre engagement à Nkoupa Ngagnou</a>
+                <a href="#futurs-projets">Nos projets d'avenir</a>
+                <a href="#actualites">Actualités et événements</a>
+            </div>
+        </div>
         <a href="#soutenir">Nous Soutenir</a>
         <a href="#contact">Contact</a>
     </nav>
     <div class="container">
         <section id="accueil">
             <h2>Bienvenue</h2>
-            <p>Le CVPN agit pour améliorer la qualité de vie des habitants du village Nkoupa Ngagnou en développant des projets d'accès à la santé, à l’éducation et aux infrastructures essentielles.</p>
+            <p>Le CVPN agit pour améliorer la qualité de vie des habitants de Nkoupa Ngagnou en développant des projets d'accès à la santé, à l’éducation et aux infrastructures essentielles.</p>
+        </section>
+        <section id="qui-sommes-nous">
+            <h2>Qui sommes-nous ?</h2>
+            <p>CVPN est une association dédiée à l'amélioration des conditions de vie à Nkoupa Ngagnou à travers des actions concrètes et solidaires.</p>
         </section>
         <section id="missions">
-            <h2>Nos Missions</h2>
+            <h2>Notre engagement à Nkoupa Ngagnou</h2>
             <p>Nous soutenons des initiatives locales en collaboration avec les autorités et partenaires pour garantir un impact durable sur le terrain.</p>
         </section>
-        <section id="projets">
-            <h2>Nos Projets</h2>
+        <section id="futurs-projets">
+            <h2>Nos projets d'avenir</h2>
             <p>🔹 Construction d'un centre de santé<br>🔹 Programme de soutien scolaire<br>🔹 Développement des infrastructures locales<br>🔹 Accès à l’eau potable</p>
+        </section>
+        <section id="actualites">
+            <h2>Actualités et événements</h2>
+            <p>Restez informés des dernières avancées et des événements organisés pour soutenir nos actions.</p>
         </section>
         <section id="soutenir">
             <h2>Nous Soutenir</h2>

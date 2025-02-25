@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CVPN - Cercle pour la Promotion du Village de Nkoupa Ngagnou</title>
   <style>
-    /* ---- COULEURS PRINCIPALES (ancien code couleur) ---- */
+    /* ---- COULEURS PRINCIPALES ---- */
     :root {
       --header-bg: #004080;   /* Bleu du header */
       --sidebar-bg: #003366;  /* Bleu plus foncé du menu latéral */
@@ -27,24 +27,23 @@
       background: var(--header-bg);
       color: var(--text-color);
       padding: 20px;
-      position: fixed;    /* Reste visible en haut de la page */
+      position: fixed;    
       top: 0;
       left: 0;
       right: 0;
       z-index: 1000;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 
-      /* Aligne le contenu au centre (logo + titre) */
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: center; /* Centre le logo + titre */
     }
 
     .logo {
-      /* Pour un logo « carré » type tuile, on fixe la largeur ET la hauteur */
-      width: 100px;
-      height: 100px;
-      object-fit: cover;  /* S'adapte si l'image n'est pas carrée à la base */
+      /* Dimensions rectangulaires */
+      width: 150px;
+      height: 80px;
+      object-fit: cover; 
       margin-right: 20px;
     }
 
@@ -57,17 +56,16 @@
     /* ---- MENU LATÉRAL ---- */
     .sidebar {
       position: fixed;
-      top: 0;                      /* Commence en haut */
-      left: 0;                     /* Collé à gauche */
-      width: 220px;                /* Largeur du menu */
-      height: 100%;                /* Occupe toute la hauteur de la fenêtre */
+      top: 0;
+      left: 0;
+      width: 220px;
+      height: 100%;
       background-color: var(--sidebar-bg);
-      padding-top: 140px;          /* Laisse de la place pour le header (70-100px) */
+      padding-top: 140px;   /* Laisse de la place pour le header */
       box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-      z-index: 999;                /* Juste sous le header */
+      z-index: 999;
     }
 
-    /* Liens du menu latéral */
     .sidebar nav a {
       display: block;
       color: var(--text-color);
@@ -83,11 +81,12 @@
 
     /* ---- CONTENU PRINCIPAL ---- */
     .content {
-      margin-left: 220px;   /* Laisse la place au menu latéral */
+      margin-left: 220px;
       padding: 30px;
-      padding-top: 140px;   /* Pour ne pas passer sous le header fixe */
+      padding-top: 140px;  /* Pour ne pas passer sous le header */
       background: var(--content-bg);
-      min-height: 100vh;    /* Occupe au moins toute la hauteur de l’écran */
+      min-height: 100vh;
+      text-align: center;  /* Centre les textes si souhaité */
     }
 
     section {
@@ -96,13 +95,12 @@
 
     h2 {
       color: var(--header-bg);
-      text-align: center;
       margin-top: 0;
     }
 
     /* ---- BOUTON DE DON ---- */
     .btn-donate {
-      background: #ff6600;     /* Orange pour ressortir */
+      background: #ff6600;
       color: #ffffff;
       padding: 10px 20px;
       text-decoration: none;
@@ -113,7 +111,7 @@
     }
 
     .btn-donate:hover {
-      background: #e65c00;     /* Variation plus sombre au survol */
+      background: #e65c00;
     }
 
     /* ---- PIED DE PAGE ---- */
@@ -122,9 +120,6 @@
       color: var(--text-color);
       text-align: center;
       padding: 15px;
-      /* Si vous voulez qu’il soit toujours visible en bas, vous pouvez utiliser
-         position: fixed; bottom: 0; left: 0; width: 100%; 
-         Mais ici on le laisse statique en bas du contenu. */
       margin-top: 20px;
     }
   </style>
@@ -133,6 +128,7 @@
 
   <!-- HEADER -->
   <header>
+    <!-- Assurez-vous que 'logo.png' est bien le nom et le chemin correct de votre image -->
     <img src="logo.png" alt="Logo CVPN" class="logo" />
     <h1 class="site-title">CVPN - Cercle pour la Promotion du Village de Nkoupa Ngagnou</h1>
   </header>

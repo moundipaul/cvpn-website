@@ -7,11 +7,10 @@
   <style>
     /* ---- COULEURS PRINCIPALES ---- */
     :root {
-      --header-bg: #004080;   /* Bleu utilisé pour les titres/accents */
-      --sidebar-bg: #003366;  /* Ancien bleu plus foncé du menu latéral */
+      --header-bg: #004080;   /* Bleu pour les titres */
       --text-color: #ffffff;  /* Blanc pour certains éléments */
       --body-bg: #f4f4f4;     /* Gris clair du fond */
-      --content-bg: #ffffff;  /* Fond blanc pour le contenu */
+      --content-bg: #ffffff;  /* Fond blanc du contenu */
     }
 
     /* ---- STYLE GÉNÉRAL ---- */
@@ -23,7 +22,7 @@
       color: #333; /* Couleur de texte par défaut */
     }
 
-    /* ---- EN-TÊTE (barre de navigation) ---- */
+    /* ---- HEADER ---- */
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -35,7 +34,6 @@
       padding: 10px 20px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
-    /* Logo + titre à gauche */
     .logo {
       display: flex;
       align-items: center;
@@ -53,7 +51,6 @@
       margin: 0;
     }
 
-    /* Navigation à droite */
     nav ul {
       list-style: none;
       display: flex;
@@ -69,43 +66,44 @@
       color: var(--header-bg);
     }
 
-    /* ---- "HERO" (Accueil) ---- */
+    /* ---- SECTION HERO (Accueil) ---- */
     .hero {
       position: relative;
       width: 100%;
       height: 80vh;
-      margin-top: 70px; /* Pour laisser la place au header fixe */
+      margin-top: 70px; /* Laisser la place pour le header fixe */
       background: url('image1.jpg') no-repeat center center;
       background-size: cover;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      /* Le fond de la section hero est l'image seule */
-      color: #fff;
+      color: #fff; /* Couleur du texte */
     }
-
-    /* L'overlay gris ne sera appliqué qu'au conteneur de texte */
+    /* Conteneur de texte avec un fond semi-transparent */
     .hero-content {
       position: relative;
       z-index: 1;
       max-width: 800px;
       margin: 0 20px;
-      background: rgba(0,0,0,0.4); /* Overlay gris seulement derrière le texte */
+      background: rgba(0, 0, 0, 0.4); /* Boîte sombre derrière le texte */
       padding: 20px;
       border-radius: 8px;
     }
+    /* Styles du titre et paragraphe pour plus de lisibilité */
     .hero-content h2 {
       font-size: 2.5rem;
       font-weight: bold;
       color: #fff;
       margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Ombre portée */
     }
     .hero-content p {
       font-size: 1.4rem;
       font-weight: bold;
       color: #fff;
       line-height: 1.6;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Ombre portée plus légère */
     }
 
     /* ---- CONTENU PRINCIPAL ---- */
@@ -160,7 +158,7 @@
 </head>
 <body>
 
-  <!-- HEADER (barre de navigation en haut) -->
+  <!-- HEADER -->
   <header>
     <a href="#" class="logo">
       <img src="logo.png" alt="Logo CVPN" />
@@ -189,7 +187,7 @@
     </div>
   </section>
 
-  <!-- CONTENU PRINCIPAL (autres sections) -->
+  <!-- CONTENU PRINCIPAL -->
   <div class="content">
     <section id="qui-sommes-nous">
       <h2>Qui sommes-nous ?</h2>

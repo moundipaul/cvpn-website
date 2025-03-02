@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CVPN - Cercle pour la Promotion du Village de Nkoupa Ngagnou</title>
   <style>
-    /* ---- COULEURS PRINCIPALES ---- */
+    /* ---- COULEURS PRINCIPALES (identiques à votre code) ---- */
     :root {
-      --header-bg: #004080;   /* Bleu du header */
-      --sidebar-bg: #003366;  /* Bleu plus foncé du menu latéral */
-      --text-color: #ffffff;  /* Blanc pour le texte du header/menu */
+      --header-bg: #004080;   /* Bleu utilisé pour les titres/accents */
+      --sidebar-bg: #003366;  /* Ancien bleu plus foncé du menu latéral */
+      --text-color: #ffffff;  /* Blanc pour certains éléments */
       --body-bg: #f4f4f4;     /* Gris clair du fond */
       --content-bg: #ffffff;  /* Fond blanc pour le contenu */
     }
@@ -20,120 +20,70 @@
       padding: 0;
       font-family: Arial, sans-serif;
       background-color: var(--body-bg);
+      color: #333; /* Couleur de texte par défaut */
     }
 
-    /* ---- HEADER (EN-TÊTE) ---- */
+    /* ---- EN-TÊTE (type "barre de navigation" inspirée Mbogui) ---- */
     header {
-      background: var(--header-bg);
-      color: var(--text-color);
-      padding: 20px;
-      position: fixed;    
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 999;
+      background: #fff; /* Barre de navigation blanche */
       display: flex;
       align-items: center;
-      justify-content: center; /* Centre le logo + titre */
+      justify-content: space-between;
+      padding: 10px 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
 
+    /* Logo à gauche */
     .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #333;
+    }
+    .logo img {
+      /* Même dimension que précédemment */
       width: 150px;
       height: 80px;
-      object-fit: cover; 
-      margin-right: 20px;
+      object-fit: cover;
+      margin-right: 10px;
     }
-
     .site-title {
-      font-size: 24px;
+      font-size: 1.4rem;
       margin: 0;
-      text-align: center;
     }
 
-    /* ---- MENU LATÉRAL ---- */
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 220px;
-      height: 100%;
-      background-color: var(--sidebar-bg);
-      padding-top: 140px;   /* Laisse de la place pour le header */
-      box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-      z-index: 999;
+    /* Navigation à droite */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
     }
-
-    .sidebar nav a {
-      display: block;
-      color: var(--text-color);
+    nav a {
       text-decoration: none;
-      padding: 15px 20px;
-      font-weight: bold;
-      font-size: 16px;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: var(--header-bg); /* Devient bleu au survol */
     }
 
-    .sidebar nav a:hover {
-      background-color: rgba(255,255,255,0.1);
-    }
-
-    /* ---- CONTENU PRINCIPAL ---- */
-    .content {
-      margin-left: 220px;
-      padding: 30px;
-      padding-top: 140px;  /* Pour ne pas passer sous le header */
-      background: var(--content-bg);
-      min-height: 100vh;
-      text-align: center;
-    }
-
-    section {
-      margin-bottom: 40px;
-    }
-
-    h2 {
-      color: var(--header-bg);
-      margin-top: 0;
-    }
-
-    /* ---- BOUTON DE DON ---- */
-    .btn-donate {
-      background: #ff6600;
-      color: #ffffff;
-      padding: 10px 20px;
-      text-decoration: none;
-      font-size: 18px;
-      display: inline-block;
-      margin-top: 10px;
-      border-radius: 5px;
-    }
-
-    .btn-donate:hover {
-      background: #e65c00;
-    }
-
-    /* ---- PIED DE PAGE ---- */
-    footer {
-      background: var(--header-bg);
-      color: var(--text-color);
-      text-align: center;
-      padding: 15px;
-      margin-top: 20px;
-    }
-
-    /* =====================================
-       STYLE "HERO" ajouté (inspiré du code précédent)
-       pour la section #accueil
-       ===================================== */
+    /* ---- "HERO" (Accueil) ---- */
     .hero {
       position: relative;
       width: 100%;
-      min-height: 80vh; /* Hauteur de la zone hero */
+      height: 80vh; /* Hauteur de la zone hero */
       background: url('https://via.placeholder.com/1200x800?text=Votre+image+de+montagnes') no-repeat center center;
       background-size: cover;
-      color: #fff; /* texte blanc */
-      margin-bottom: 40px;
+      color: #fff; /* Texte blanc */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-top: 70px; /* Pour laisser la place au header fixe */
     }
     .hero::after {
       content: "";
@@ -146,46 +96,105 @@
     .hero-content {
       position: relative;
       z-index: 1; /* au-dessus du voile */
-      padding: 60px 20px;
+      max-width: 800px;
+      margin: 0 20px;
+    }
+    .hero-content h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      line-height: 1.4;
+    }
+
+    /* ---- CONTENU PRINCIPAL ---- */
+    .content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px; /* Espace autour du contenu */
+      background: var(--content-bg);
+      min-height: 60vh; /* Hauteur minimum */
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+    section h2 {
+      color: var(--header-bg); /* Titre en bleu */
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+    section p {
+      text-align: center;
+      line-height: 1.6;
       max-width: 800px;
       margin: 0 auto;
+    }
+
+    /* ---- BOUTON DE DON ---- */
+    .btn-donate {
+      background: #ff6600;
+      color: #ffffff;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 18px;
+      display: inline-block;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+    .btn-donate:hover {
+      background: #e65c00;
+    }
+
+    /* ---- PIED DE PAGE ---- */
+    footer {
+      background: var(--header-bg);
+      color: var(--text-color);
       text-align: center;
+      padding: 15px;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- HEADER (barre de navigation en haut) -->
   <header>
-    <img src="logo.png" alt="Logo CVPN" class="logo" />
-    <h1 class="site-title">CVPN - Cercle pour la Promotion du Village de Nkoupa Ngagnou</h1>
+    <!-- Logo + Titre à gauche -->
+    <a href="#" class="logo">
+      <img src="logo.png" alt="Logo CVPN" />
+      <h1 class="site-title">CVPN</h1>
+    </a>
+
+    <!-- Menu de navigation à droite -->
+    <nav>
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#qui-sommes-nous">Qui sommes-nous ?</a></li>
+        <li><a href="#missions">Notre engagement</a></li>
+        <li><a href="#futurs-projets">Nos projets d'avenir</a></li>
+        <li><a href="#soutenir">Nous soutenir</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- MENU LATÉRAL -->
-  <div class="sidebar">
-    <nav>
-      <a href="#accueil">Accueil</a>
-      <a href="#qui-sommes-nous">Qui sommes-nous ?</a>
-      <a href="#missions">Notre engagement</a>
-      <a href="#futurs-projets">Nos projets d'avenir</a>
-      <a href="#soutenir">Nous soutenir</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
+  <!-- SECTION ACCUEIL (Hero) -->
+  <section id="accueil" class="hero">
+    <div class="hero-content">
+      <h2>Bienvenue</h2>
+      <p>
+        Le CVPN agit pour améliorer la qualité de vie des habitants de Nkoupa Ngagnou 
+        en développant des projets d'accès à la santé, à l’éducation et aux infrastructures essentielles.
+      </p>
+    </div>
+  </section>
 
-  <!-- CONTENU PRINCIPAL -->
+  <!-- CONTENU PRINCIPAL (autres sections) -->
   <div class="content">
-    <!-- SECTION ACCUEIL transformée en "hero" -->
-    <section id="accueil" class="hero">
-      <!-- On place le contenu existant dans un bloc .hero-content -->
-      <div class="hero-content">
-        <h2>Bienvenue</h2>
-        <p>
-          Le CVPN agit pour améliorer la qualité de vie des habitants de Nkoupa Ngagnou 
-          en développant des projets d'accès à la santé, à l’éducation et aux infrastructures essentielles.
-        </p>
-      </div>
-    </section>
 
     <section id="qui-sommes-nous">
       <h2>Qui sommes-nous ?</h2>
@@ -229,6 +238,7 @@
         Siège social : 78630 Orgeval, France
       </p>
     </section>
+
   </div>
 
   <!-- PIED DE PAGE -->

@@ -19,24 +19,22 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      /* On remet le fond gris clair */
       background-color: var(--body-bg);
       color: #333; /* Couleur de texte par défaut */
     }
 
-    /* ---- EN-TÊTE (type "barre de navigation") ---- */
+    /* ---- EN-TÊTE (barre de navigation) ---- */
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 999;
-      background: #fff; /* Barre de navigation blanche */
+      background: #fff;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 10px 20px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
-
     /* Logo + titre à gauche */
     .logo {
       display: flex;
@@ -68,49 +66,42 @@
       transition: color 0.3s ease;
     }
     nav a:hover {
-      color: var(--header-bg); /* Devient bleu au survol */
+      color: var(--header-bg);
     }
 
     /* ---- "HERO" (Accueil) ---- */
     .hero {
       position: relative;
       width: 100%;
-      height: 80vh; /* Hauteur de la zone hero */
+      height: 80vh;
       margin-top: 70px; /* Pour laisser la place au header fixe */
-      
-      /* On place l'image "image1" uniquement ici */
       background: url('image1.jpg') no-repeat center center;
       background-size: cover;
-      color: #fff; /* Texte blanc */
-      
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
+      /* Le fond de la section hero est l'image seule */
+      color: #fff;
     }
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.4); /* voile sombre */
-      z-index: 0;
-    }
+
+    /* L'overlay gris ne sera appliqué qu'au conteneur de texte */
     .hero-content {
       position: relative;
-      z-index: 1; /* au-dessus du voile */
+      z-index: 1;
       max-width: 800px;
       margin: 0 20px;
+      background: rgba(0,0,0,0.4); /* Overlay gris seulement derrière le texte */
+      padding: 20px;
+      border-radius: 8px;
     }
     .hero-content h2 {
-      /* Titre plus grand, en gras, blanc */
       font-size: 2.5rem;
       font-weight: bold;
       color: #fff;
       margin-bottom: 20px;
     }
     .hero-content p {
-      /* Paragraphe plus grand, en gras, blanc */
       font-size: 1.4rem;
       font-weight: bold;
       color: #fff;
@@ -121,16 +112,15 @@
     .content {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 40px 20px; /* Espace autour du contenu */
+      padding: 40px 20px;
       background: var(--content-bg);
-      min-height: 60vh; /* Hauteur minimum */
+      min-height: 60vh;
     }
-
     section {
       margin-bottom: 60px;
     }
     section h2 {
-      color: var(--header-bg); /* Titre en bleu */
+      color: var(--header-bg);
       margin-top: 0;
       margin-bottom: 20px;
       font-size: 1.8rem;
@@ -172,13 +162,10 @@
 
   <!-- HEADER (barre de navigation en haut) -->
   <header>
-    <!-- Logo + Titre à gauche -->
     <a href="#" class="logo">
       <img src="logo.png" alt="Logo CVPN" />
       <h1 class="site-title">Cercle pour la Promotion du Village de Nkoupa Ngagnou</h1>
     </a>
-
-    <!-- Menu de navigation à droite -->
     <nav>
       <ul>
         <li><a href="#accueil">Accueil</a></li>
@@ -204,7 +191,6 @@
 
   <!-- CONTENU PRINCIPAL (autres sections) -->
   <div class="content">
-
     <section id="qui-sommes-nous">
       <h2>Qui sommes-nous ?</h2>
       <p>
@@ -247,7 +233,6 @@
         Siège social : 78630 Orgeval, France
       </p>
     </section>
-
   </div>
 
   <!-- PIED DE PAGE -->

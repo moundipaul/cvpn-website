@@ -161,25 +161,24 @@
       max-width: none;
     }
 
-    /* ---- COLONNE IMAGE AVEC ZOOM ---- */
+    /* ---- COLONNE IMAGES (sans rogner) ---- */
     .image2 {
       flex: 1 1 40%;
+      text-align: center;
       display: flex;
-      flex-direction: column; /* On empile verticalement si 2 images */
-      gap: 10px;
+      flex-direction: column;  /* On empile verticalement si 2 images */
+      gap: 10px;               /* Espacement entre les images */
+      align-items: center;     /* Centre horizontalement */
     }
     .image2 img {
-      width: 100%;
-      object-fit: cover;
+      /* Limite la taille des images pour qu'elles soient plus petites
+         sans rogner (height: auto) */
+      max-width: 300px; 
+      height: auto;
       border-radius: 5px;
       cursor: pointer;
       transition: transform 0.3s ease;
-    }
-
-    /* ---- RÈGLE SPÉCIALE POUR LA PREMIÈRE IMAGE (labo1) ---- */
-    .labo1 {
-      max-height: 250px; /* Ajustez cette hauteur pour réduire la taille */
-      object-fit: contain; 
+      display: block;
     }
 
     /* ---- BOUTON DE DON ---- */
@@ -325,13 +324,11 @@
         </div>
       </div>
 
-      <!-- 2e Encadré : Laboratoire (2 images empilées, 1ere plus petite) -->
+      <!-- 2e Encadré : Laboratoire (2 images empilées) -->
       <div class="projet-container">
         <!-- Colonne images -->
         <div class="image2">
-          <!-- Première image réduite -->
-          <img class="zoomable labo1" src="labo1.jpg" alt="Labo 1 du laboratoire" />
-          <!-- Deuxième image taille normale -->
+          <img class="zoomable" src="labo1.jpg" alt="Labo 1 du laboratoire" />
           <img class="zoomable" src="labo2.jpg" alt="Labo 2 du laboratoire" />
         </div>
         <!-- Colonne texte -->

@@ -128,7 +128,7 @@
       margin: 0 auto;
     }
 
-    /* ---- LAYOUT DU PROJET (STYLE 2 COLONNES) ---- */
+    /* ---- LAYOUT DES ENCADRÉS (STYLE 2 COLONNES) ---- */
     .projet-container {
       display: flex;
       flex-wrap: wrap;
@@ -160,7 +160,6 @@
       text-align: left;
       max-width: none;
     }
-
     /* ---- COLONNE IMAGE AVEC ZOOM ---- */
     .image2 {
       flex: 1 1 40%;
@@ -173,9 +172,13 @@
       border-radius: 5px;
       transition: transform 0.3s ease;
       display: block;
-      margin: 10px auto; /* Espacement entre les images */
+      margin: 10px auto;
     }
-
+    /* ---- STYLE SPÉCIFIQUE AUX IMAGES DU LABO ---- */
+    .labo-img {
+      max-width: 60%; /* Taille réduite pour les images du labo */
+      /* Vous pouvez ajuster cette valeur selon vos besoins */
+    }
     /* ---- BOUTON DE DON ---- */
     .btn-donate {
       background: #ff6600;
@@ -190,7 +193,6 @@
     .btn-donate:hover {
       background: #e65c00;
     }
-
     /* ---- PIED DE PAGE ---- */
     footer {
       background: var(--header-bg);
@@ -199,7 +201,6 @@
       padding: 15px;
       margin-top: 20px;
     }
-
     /* ---- MODAL CSS POUR ZOOM DE L'IMAGE ---- */
     .modal {
       display: none;
@@ -236,7 +237,6 @@
   </style>
 </head>
 <body>
-
   <!-- HEADER -->
   <header>
     <a href="#" class="logo">
@@ -254,7 +254,6 @@
       </ul>
     </nav>
   </header>
-
   <!-- SECTION ACCUEIL (Hero) -->
   <section id="accueil" class="hero">
     <div class="hero-content">
@@ -265,7 +264,6 @@
       </p>
     </div>
   </section>
-
   <!-- CONTENU PRINCIPAL -->
   <div class="content">
     <section id="qui-sommes-nous">
@@ -275,7 +273,6 @@
         à travers des actions concrètes et solidaires.
       </p>
     </section>
-
     <section id="missions">
       <h2>Notre engagement</h2>
       <p>
@@ -283,7 +280,6 @@
         et partenaires pour garantir un impact durable sur le terrain.
       </p>
     </section>
-
     <!-- SECTION PROJETS D'AVENIR -->
     <section id="futurs-projets">
       <h2>Nos projets d'avenir</h2>
@@ -293,7 +289,6 @@
         🔹 Développement des infrastructures locales<br>
         🔹 Accès à l’eau potable
       </p>
-
       <!-- 1er Encadré : Centre de Santé (texte à gauche, image à droite) -->
       <div class="projet-container">
         <!-- Colonne texte -->
@@ -314,20 +309,18 @@
             Nous œuvrons pour renforcer cet espace de santé afin qu’il puisse répondre aux besoins croissants de la communauté.
           </p>
         </div>
-
         <!-- Colonne image -->
         <div class="image2">
           <img class="zoomable" src="centre_sante.jpg" alt="Construction d'un centre de santé" />
         </div>
       </div>
       <!-- Fin du 1er Encadré -->
-
       <!-- 2e Encadré : Laboratoire (images à gauche, texte à droite) -->
       <div class="projet-container">
         <!-- Colonne images -->
         <div class="image2">
-          <img class="zoomable" src="labo1.jpg" alt="Labo 1 du laboratoire" />
-          <img class="zoomable" src="labo2.jpg" alt="Labo 2 du laboratoire" />
+          <img class="zoomable labo-img" src="labo1.jpg" alt="Labo 1 du laboratoire" />
+          <img class="zoomable labo-img" src="labo2.jpg" alt="Labo 2 du laboratoire" />
         </div>
         <!-- Colonne texte -->
         <div class="projet-texte">
@@ -350,7 +343,6 @@
       </div>
       <!-- Fin du 2e Encadré -->
     </section>
-
     <section id="soutenir">
       <h2>Nous soutenir</h2>
       <p>
@@ -359,7 +351,6 @@
       </p>
       <a href="#" class="btn-donate">Faire un don</a>
     </section>
-
     <section id="contact">
       <h2>Contact</h2>
       <p>
@@ -368,28 +359,23 @@
       </p>
     </section>
   </div>
-
   <!-- PIED DE PAGE -->
   <footer>
     <p>&copy; 2024 CVPN - Tous droits réservés</p>
   </footer>
-
   <!-- Modal pour zoom de l'image -->
   <div id="myModal" class="modal">
     <span class="close">&times;</span>
     <img class="modal-content" id="imgZoom">
     <div id="caption"></div>
   </div>
-
   <script>
     // Gestion du zoom sur toutes les images ayant la classe "zoomable"
     var modal = document.getElementById("myModal");
     var modalImg = document.getElementById("imgZoom");
     var captionText = document.getElementById("caption");
-
     // Récupère toutes les images "zoomable"
     var zoomableImages = document.querySelectorAll('.zoomable');
-
     zoomableImages.forEach(function(image) {
       image.addEventListener('click', function() {
         modal.style.display = "block";
@@ -397,7 +383,6 @@
         captionText.innerHTML = this.alt;
       });
     });
-
     // Fermer le modal lorsqu'on clique sur la croix
     var span = document.getElementsByClassName("close")[0];
     span.onclick = function() {

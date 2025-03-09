@@ -96,14 +96,14 @@
       font-weight: bold;
       color: #fff;
       margin-bottom: 20px;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Ombre portée */
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
     }
     .hero-content p {
       font-size: 1.4rem;
       font-weight: bold;
       color: #fff;
       line-height: 1.6;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Ombre portée plus légère */
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
     }
 
     /* ---- CONTENU PRINCIPAL ---- */
@@ -141,10 +141,12 @@
       height: auto;
       margin-bottom: 10px;
     }
-    .projet-image textarea {
-      width: 80%;
-      padding: 10px;
-      font-family: Arial, sans-serif;
+    .projet-description {
+      font-size: 1rem;
+      color: #333;
+      text-align: center;
+      margin: 0 auto;
+      max-width: 80%;
     }
 
     /* ---- BOUTON DE DON ---- */
@@ -229,15 +231,17 @@
         🔹 Développement des infrastructures locales<br>
         🔹 Accès à l’eau potable
       </p>
-      <!-- Ajout de l'image et de la zone de texte pour la description du projet "Construction d'un centre de santé" -->
+      <!-- Affichage de l'image et du descriptif non modifiable pour "Construction d'un centre de santé" -->
       <div class="projet-image">
-        <img src="centre_sante.jpg" alt="Construction d'un centre de santé" />
-        <textarea rows="4" placeholder="Centre de Santé Intégré de Koupa Ngagnou
+        <img src="centre_santé.jpg" alt="Construction d'un centre de santé" />
+        <div class="projet-description">
+          <p>Centre de Santé Intégré de Koupa Ngagnou
 Le Centre de Santé Intégré de Koupa Ngagnou est un établissement de soins essentiel pour la communauté locale. Situé en pleine nature, il offre un accès aux soins de première nécessité aux habitants du village et des environs. Grâce à son infrastructure simple mais fonctionnelle, le centre joue un rôle clé dans l’amélioration de la santé et du bien-être de la population.
 
 L’accès à l’eau potable est facilité par un puits sécurisé, garantissant une meilleure hygiène et réduisant les maladies liées à l’eau insalubre. L’engagement des soignants et du personnel médical contribue chaque jour à fournir des soins de qualité malgré les ressources limitées.
 
-Notre association, le Cercle pour la Promotion du Village de Nkoupa Ngagnou (CVPN), soutient activement ce centre en initiant des projets d’amélioration des infrastructures, de fourniture d’équipements médicaux et d’accès à des soins adaptés. Nous œuvrons pour renforcer cet espace de santé afin qu’il puisse répondre aux besoins croissants de la communauté."></textarea>
+Notre association, le Cercle pour la Promotion du Village de Nkoupa Ngagnou (CVPN), soutient activement ce centre en initiant des projets d’amélioration des infrastructures, de fourniture d’équipements médicaux et d’accès à des soins adaptés. Nous œuvrons pour renforcer cet espace de santé afin qu’il puisse répondre aux besoins croissants de la communauté.</p>
+        </div>
       </div>
     </section>
 
@@ -263,6 +267,5 @@ Notre association, le Cercle pour la Promotion du Village de Nkoupa Ngagnou (CVP
   <footer>
     <p>&copy; 2024 CVPN - Tous droits réservés</p>
   </footer>
-
 </body>
 </html>

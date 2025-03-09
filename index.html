@@ -12,7 +12,6 @@
       --body-bg: #f4f4f4;     /* Gris clair du fond */
       --content-bg: #ffffff;  /* Fond blanc du contenu */
     }
-
     /* ---- STYLE GÉNÉRAL ---- */
     body {
       margin: 0;
@@ -21,7 +20,6 @@
       background-color: var(--body-bg);
       color: #333;
     }
-
     /* ---- HEADER ---- */
     header {
       position: fixed;
@@ -64,7 +62,6 @@
     nav a:hover {
       color: var(--header-bg);
     }
-
     /* ---- SECTION HERO (Accueil) ---- */
     .hero {
       position: relative;
@@ -102,7 +99,6 @@
       line-height: 1.6;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
     }
-
     /* ---- CONTENU PRINCIPAL ---- */
     .content {
       max-width: 1200px;
@@ -127,7 +123,6 @@
       max-width: 800px;
       margin: 0 auto;
     }
-
     /* ---- LAYOUT DES ENCADRÉS (STYLE 2 COLONNES) ---- */
     .projet-container {
       display: flex;
@@ -160,27 +155,23 @@
       text-align: left;
       max-width: none;
     }
-
     /* ---- COLONNE IMAGES (sans rogner) ---- */
     .projet_image {
       flex: 1 1 40%;
       text-align: center;
       display: flex;
-      flex-direction: column;  /* On empile verticalement si plusieurs images */
-      gap: 10px;               /* Espacement entre les images */
-      align-items: center;     /* Centre horizontalement */
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
     }
     .projet_image img {
-      /* Limite la taille des images pour qu'elles soient plus petites
-         sans rogner (height: auto) */
-      max-width: 500px; 
+      max-width: 500px;
       height: auto;
       border-radius: 5px;
       cursor: pointer;
       transition: transform 0.3s ease;
       display: block;
     }
-
     /* ---- BOUTON DE DON ---- */
     .btn-donate {
       background: #ff6600;
@@ -195,7 +186,6 @@
     .btn-donate:hover {
       background: #e65c00;
     }
-
     /* ---- PIED DE PAGE ---- */
     footer {
       background: var(--header-bg);
@@ -204,7 +194,6 @@
       padding: 15px;
       margin-top: 20px;
     }
-
     /* ---- MODAL CSS POUR ZOOM DE L'IMAGE ---- */
     .modal {
       display: none;
@@ -328,26 +317,49 @@
       <div class="projet-container">
         <!-- Colonne images -->
         <div class="projet_image">
-          <!-- On ne garde que labo1.jpg -->
           <img class="zoomable" src="labo1.jpg" alt="Labo 1 du laboratoire" />
         </div>
         <!-- Colonne texte -->
         <div class="projet-texte">
           <h3>Un laboratoire en quête d’améliorations pour de meilleurs soins</h3>
-           <blockquote>
+          <blockquote>
             « Le laboratoire du Centre de Santé Intégré de Koupa Ngagnou manque d’équipements modernes pour assurer des analyses précises et rapides. 
-             L’amélioration de ces infrastructures est essentielle pour offrir des soins de qualité à la communauté.»
+             L’amélioration de ces infrastructures est essentielle pour offrir des soins de qualité à la communauté. »
           </blockquote>
           <p>
-           L’image montre un microscope de laboratoire utilisé pour l’analyse des échantillons médicaux au Centre de Santé Intégré de Koupa Ngagnou. 
-            Le laboratoire fonctionne avec des ressources limitées et manque d’équipements modernes pour assurer un diagnostic plus précis et rapide. 
+            Les images témoignent des conditions actuelles du laboratoire du Centre de Santé Intégré de Koupa Ngagnou. 
             Bien que l’engagement des soignants soit indéniable, le manque d’équipements modernes et de matériel de diagnostic 
             limite la qualité des soins offerts à la communauté. L’absence d’instruments médicaux adaptés, de réactifs de laboratoire 
             et d’un espace mieux équipé entrave la rapidité et la précision des analyses médicales.
           </p>
           <p>
-            Notre association, le Cercle pour la Promotion du Village de Nkoupa Ngagnou (CVPN), œuvre à améliorer ces infrastructures 
+            Notre association, le Cercle pour la Promotion du Village de Nkoupa Ngagnou (CVPN), s’engage à améliorer ces infrastructures 
             pour garantir des diagnostics plus fiables et un cadre de travail optimal pour le personnel médical.
+          </p>
+          <p>
+            📢 Aidez-nous à moderniser ce laboratoire en contribuant à l’acquisition de matériel médical 
+            et en soutenant nos initiatives pour renforcer l’accès aux soins dans le village.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3e Encadré : Chambre de Soins (Image à gauche, texte à droite) -->
+      <div class="projet-container">
+        <!-- Colonne image -->
+        <div class="projet_image">
+          <img class="zoomable" src="chambre_soins.jpg" alt="Salle de soins nécessitant des améliorations" />
+        </div>
+        <!-- Colonne texte -->
+        <div class="projet-texte">
+          <h3>Une salle de soins nécessitant des améliorations</h3>
+          <p>
+            L’image montre une salle du Centre de Santé Intégré de Koupa Ngagnou, équipée de lits d’hospitalisation et d’une table d’accouchement. 
+            Cet espace est essentiel pour la prise en charge des patients et l’accompagnement des femmes en période de maternité. 
+            Toutefois, les infrastructures sont rudimentaires et nécessitent des améliorations pour offrir de meilleures conditions de soins.
+          </p>
+          <p>
+            Le manque de matériel médical adapté, de lits confortables et d’équipements de stérilisation impacte la qualité des soins. 
+            Notre association, le CVPN, s’engage à rénover cette salle et à doter le centre de matériel médical adéquat.
           </p>
         </div>
       </div>

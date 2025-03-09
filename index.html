@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CVPN - Cercle pour la Promotion du Village de Nkoupa Ngagnou</title>
   <style>
+    /* ---- COULEURS PRINCIPALES ---- */
     :root {
-      --header-bg: #004080;
-      --text-color: #ffffff;
-      --body-bg: #f4f4f4;
-      --content-bg: #ffffff;
+      --header-bg: #004080;   /* Bleu pour les titres */
+      --text-color: #ffffff;  /* Blanc pour certains éléments */
+      --body-bg: #f4f4f4;     /* Gris clair du fond */
+      --content-bg: #ffffff;  /* Fond blanc du contenu */
     }
 
+    /* ---- STYLE GÉNÉRAL ---- */
     body {
       margin: 0;
       padding: 0;
@@ -20,6 +22,7 @@
       color: #333;
     }
 
+    /* ---- HEADER ---- */
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -31,7 +34,6 @@
       padding: 10px 20px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
-
     .logo {
       display: flex;
       align-items: center;
@@ -44,7 +46,64 @@
       object-fit: cover;
       margin-right: 10px;
     }
+    .site-title {
+      font-size: 1.4rem;
+      margin: 0;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: var(--header-bg);
+    }
 
+    /* ---- SECTION HERO (Accueil) ---- */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 80vh;
+      margin-top: 70px;
+      background: url('image1.jpg') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 20px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .hero-content h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+    .hero-content p {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #fff;
+      line-height: 1.6;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+
+    /* ---- CONTENU PRINCIPAL ---- */
     .content {
       max-width: 1200px;
       margin: 0 auto;
@@ -52,7 +111,24 @@
       background: var(--content-bg);
       min-height: 60vh;
     }
+    section {
+      margin-bottom: 60px;
+    }
+    section h2 {
+      color: var(--header-bg);
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+    section p {
+      text-align: center;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
+    /* ---- LAYOUT DU PROJET (STYLE 2 COLONNES) ---- */
     .projet-container {
       display: flex;
       flex-wrap: wrap;
@@ -64,7 +140,33 @@
       margin-top: 30px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
+    .projet-texte {
+      flex: 1 1 50%;
+      padding-right: 20px;
+    }
+    .projet-texte h3 {
+      margin-top: 0;
+      color: #004080;
+      font-size: 1.4rem;
+    }
+    .projet-texte blockquote {
+      font-style: italic;
+      margin: 20px 0;
+      padding-left: 20px;
+      border-left: 4px solid #ccc;
+      color: #555;
+    }
+    .projet-texte p {
+      text-align: left;
+      max-width: none;
+    }
 
+    /* ---- COLONNE IMAGE AVEC ZOOM ---- */
+    .image2 {
+      flex: 1 1 40%;
+      text-align: center;
+      cursor: pointer;
+    }
     .image2 img {
       max-width: 90%;
       height: auto;
@@ -72,6 +174,7 @@
       transition: transform 0.3s ease;
     }
 
+    /* ---- BOUTON DE DON ---- */
     .btn-donate {
       background: #ff6600;
       color: #ffffff;
@@ -82,7 +185,11 @@
       margin-top: 20px;
       border-radius: 5px;
     }
+    .btn-donate:hover {
+      background: #e65c00;
+    }
 
+    /* ---- PIED DE PAGE ---- */
     footer {
       background: var(--header-bg);
       color: var(--text-color);
@@ -90,49 +197,178 @@
       padding: 15px;
       margin-top: 20px;
     }
+
+    /* ---- MODAL CSS POUR ZOOM DE L'IMAGE ---- */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 50%;
+    }
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
+
+  <!-- HEADER -->
   <header>
     <a href="#" class="logo">
       <img src="logo.png" alt="Logo CVPN" />
-      <h1>Cercle pour la Promotion du Village de Nkoupa Ngagnou</h1>
+      <h1 class="site-title">Cercle pour la Promotion du Village de Nkoupa Ngagnou</h1>
     </a>
+    <nav>
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#qui-sommes-nous">Qui sommes-nous ?</a></li>
+        <li><a href="#missions">Notre engagement</a></li>
+        <li><a href="#futurs-projets">Nos projets d'avenir</a></li>
+        <li><a href="#soutenir">Nous soutenir</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
+  <!-- SECTION ACCUEIL (Hero) -->
+  <section id="accueil" class="hero">
+    <div class="hero-content">
+      <h2>Bienvenue</h2>
+      <p>
+        Le CVPN agit pour améliorer la qualité de vie des habitants de Nkoupa Ngagnou 
+        en développant des projets d'accès à la santé, à l’éducation et aux infrastructures essentielles.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTENU PRINCIPAL -->
   <div class="content">
+    <section id="qui-sommes-nous">
+      <h2>Qui sommes-nous ?</h2>
+      <p>
+        CVPN est une association dédiée à l'amélioration des conditions de vie à Nkoupa Ngagnou 
+        à travers des actions concrètes et solidaires.
+      </p>
+    </section>
+
+    <section id="missions">
+      <h2>Notre engagement</h2>
+      <p>
+        Nous soutenons des initiatives locales en collaboration avec les autorités 
+        et partenaires pour garantir un impact durable sur le terrain.
+      </p>
+    </section>
+
+    <!-- SECTION PROJETS D'AVENIR -->
     <section id="futurs-projets">
       <h2>Nos projets d'avenir</h2>
+      <p>
+        🔹 Construction d'un centre de santé<br>
+        🔹 Programme de soutien scolaire<br>
+        🔹 Développement des infrastructures locales<br>
+        🔹 Accès à l’eau potable
+      </p>
+
+      <!-- Bloc de présentation du Centre de Santé -->
       <div class="projet-container">
+        <!-- Colonne texte -->
         <div class="projet-texte">
-          <h3>Amélioration du Centre de Santé et du Laboratoire</h3>
-          <p>Le Centre de Santé Intégré de Koupa Ngagnou joue un rôle essentiel pour la population locale. Cependant, les conditions actuelles du laboratoire médical et des infrastructures sanitaires sont limitées par le manque de matériel et d’équipements adaptés.</p>
-          <p>Notre objectif est de moderniser ces installations pour garantir un diagnostic plus fiable et améliorer la prise en charge des patients.</p>
+          <h3>Centre de Santé Intégré de Koupa Ngagnou</h3>
+          <blockquote>
+            « Le Centre de Santé Intégré de Koupa Ngagnou est un établissement de soins essentiel pour la communauté locale. 
+            Situé en pleine nature, il offre un accès aux soins de première nécessité aux habitants du village et des environs. »
+          </blockquote>
+          <p>
+            Grâce à son infrastructure simple mais fonctionnelle, le centre joue un rôle clé dans l’amélioration de la santé 
+            et du bien-être de la population. L’accès à l’eau potable est facilité par un puits sécurisé, garantissant une meilleure hygiène 
+            et réduisant les maladies liées à l’eau insalubre.
+          </p>
+          <p>
+            Notre association, le Cercle pour la Promotion du Village de Nkoupa Ngagnou (CVPN), soutient activement ce centre 
+            en initiant des projets d’amélioration des infrastructures, de fourniture d’équipements médicaux et d’accès à des soins adaptés. 
+            Nous œuvrons pour renforcer cet espace de santé afin qu’il puisse répondre aux besoins croissants de la communauté.
+          </p>
         </div>
+
+        <!-- Colonne image avec zoom sur clic -->
         <div class="image2">
-          <img src="centre_sante.jpg" alt="Centre de Santé" />
-        </div>
-      </div>
-      <div class="projet-container">
-        <div class="image2">
-          <img src="labo1.jpg" alt="Laboratoire du centre de santé" />
-        </div>
-        <div class="projet-texte">
-          <h3>Un laboratoire en quête d’équipement</h3>
-          <p>Le laboratoire du centre fonctionne avec des ressources limitées et nécessite des microscopes performants, des réactifs et d’autres équipements pour améliorer la qualité des soins.</p>
-          <p>Votre soutien peut faire la différence en nous aidant à acquérir du matériel moderne et efficace.</p>
+          <img id="zoomable" src="centre_sante.jpg" alt="Construction d'un centre de santé" />
         </div>
       </div>
     </section>
+
     <section id="soutenir">
       <h2>Nous soutenir</h2>
-      <p>Aidez-nous à améliorer les conditions sanitaires du village en effectuant un don ou en devenant membre de notre association.</p>
+      <p>
+        Votre aide est précieuse ! Vous pouvez nous aider en effectuant un don 
+        ou en devenant membre de notre association.
+      </p>
       <a href="#" class="btn-donate">Faire un don</a>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Email : <a href="mailto:cvpn.ass2024@gmail.com">cvpn.ass2024@gmail.com</a><br>
+        Siège social : 78630 Orgeval, France
+      </p>
     </section>
   </div>
 
+  <!-- PIED DE PAGE -->
   <footer>
     <p>&copy; 2024 CVPN - Tous droits réservés</p>
   </footer>
+
+  <!-- Modal pour zoom de l'image -->
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="imgZoom">
+    <div id="caption"></div>
+  </div>
+
+  <script>
+    // Sélection du modal et de l'image cliquable
+    var modal = document.getElementById("myModal");
+    var img = document.getElementById("zoomable");
+    var modalImg = document.getElementById("imgZoom");
+    var captionText = document.getElementById("caption");
+
+    // Affiche le modal avec l'image zoomée lors du clic
+    img.onclick = function(){
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    }
+
+    // Ferme le modal lorsque l'utilisateur clique sur la croix
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+  </script>
 </body>
 </html>

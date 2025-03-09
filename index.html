@@ -142,7 +142,7 @@
     }
     .projet-texte {
       flex: 1 1 50%;
-      padding-right: 20px;
+      padding: 0 20px;
     }
     .projet-texte h3 {
       margin-top: 0;
@@ -294,7 +294,7 @@
         🔹 Accès à l’eau potable
       </p>
 
-      <!-- Bloc de présentation (Centre de Santé + Laboratoire) -->
+      <!-- 1er Encadré : Centre de Santé (texte à gauche, image à droite) -->
       <div class="projet-container">
         <!-- Colonne texte -->
         <div class="projet-texte">
@@ -313,8 +313,24 @@
             en initiant des projets d’amélioration des infrastructures, de fourniture d’équipements médicaux et d’accès à des soins adaptés. 
             Nous œuvrons pour renforcer cet espace de santé afin qu’il puisse répondre aux besoins croissants de la communauté.
           </p>
+        </div>
 
-          <!-- Nouveau bloc de description pour le laboratoire -->
+        <!-- Colonne image -->
+        <div class="image2">
+          <img class="zoomable" src="centre_sante.jpg" alt="Construction d'un centre de santé" />
+        </div>
+      </div>
+      <!-- Fin du 1er Encadré -->
+
+      <!-- 2e Encadré : Laboratoire (images à gauche, texte à droite) -->
+      <div class="projet-container">
+        <!-- Colonne images -->
+        <div class="image2">
+          <img class="zoomable" src="logo1.jpg" alt="Logo 1 du laboratoire" />
+          <img class="zoomable" src="logo2.jpg" alt="Logo 2 du laboratoire" />
+        </div>
+        <!-- Colonne texte -->
+        <div class="projet-texte">
           <h3>Un laboratoire en quête d’améliorations pour de meilleurs soins</h3>
           <p>
             Les images témoignent des conditions actuelles du laboratoire du Centre de Santé Intégré de Koupa Ngagnou. 
@@ -327,21 +343,12 @@
             pour garantir des diagnostics plus fiables et un cadre de travail optimal pour le personnel médical. Votre soutien peut faire la différence !
           </p>
           <p>
-            📢 Aidez-nous à moderniser ce laboratoire en contribuant à l’acquisition de matériel médical et en soutenant nos initiatives 
-            pour renforcer l’accès aux soins dans le village.
+            📢 Aidez-nous à moderniser ce laboratoire en contribuant à l’acquisition de matériel médical 
+            et en soutenant nos initiatives pour renforcer l’accès aux soins dans le village.
           </p>
         </div>
-
-        <!-- Colonne images (toutes zoomables) -->
-        <div class="image2">
-          <!-- Image existante -->
-          <img class="zoomable" src="centre_sante.jpg" alt="Construction d'un centre de santé" />
-          <!-- Nouvelles images logo1 / logo2 -->
-          <img class="zoomable" src="logo1.jpg" alt="Logo 1 du laboratoire" />
-          <img class="zoomable" src="logo2.jpg" alt="Logo 2 du laboratoire" />
-        </div>
       </div>
-      <!-- Fin du bloc projet-container -->
+      <!-- Fin du 2e Encadré -->
     </section>
 
     <section id="soutenir">
@@ -375,7 +382,7 @@
   </div>
 
   <script>
-    // Gestion du modal et du zoom pour toutes les images avec la classe "zoomable"
+    // Gestion du zoom sur toutes les images ayant la classe "zoomable"
     var modal = document.getElementById("myModal");
     var modalImg = document.getElementById("imgZoom");
     var captionText = document.getElementById("caption");

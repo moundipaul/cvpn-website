@@ -12,6 +12,7 @@
       --body-bg: #f4f4f4;     /* Gris clair du fond */
       --content-bg: #ffffff;  /* Fond blanc du contenu */
     }
+
     /* ---- STYLE GÉNÉRAL ---- */
     body {
       margin: 0;
@@ -20,6 +21,7 @@
       background-color: var(--body-bg);
       color: #333;
     }
+
     /* ---- HEADER ---- */
     header {
       position: fixed;
@@ -62,6 +64,7 @@
     nav a:hover {
       color: var(--header-bg);
     }
+
     /* ---- SECTION HERO (Accueil) ---- */
     .hero {
       position: relative;
@@ -99,6 +102,7 @@
       line-height: 1.6;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
     }
+
     /* ---- CONTENU PRINCIPAL ---- */
     .content {
       max-width: 1200px;
@@ -123,6 +127,7 @@
       max-width: 800px;
       margin: 0 auto;
     }
+
     /* ---- LAYOUT DES ENCADRÉS (STYLE 2 COLONNES) ---- */
     .projet-container {
       display: flex;
@@ -287,7 +292,7 @@
         🔹 Accès à l’eau potable
       </p>
 
-      <!-- 1er Encadré : Centre de Santé -->
+      <!-- 1er Encadré : Centre de Santé (texte à gauche, image à droite) -->
       <div class="projet-container">
         <!-- Colonne texte -->
         <div class="projet-texte">
@@ -313,7 +318,7 @@
         </div>
       </div>
 
-      <!-- 2e Encadré : Laboratoire (UNE SEULE IMAGE) -->
+      <!-- 2e Encadré : Laboratoire (UNE SEULE IMAGE, texte à droite) -->
       <div class="projet-container">
         <!-- Colonne images -->
         <div class="projet_image">
@@ -343,12 +348,8 @@
         </div>
       </div>
 
-      <!-- 3e Encadré : Chambre de Soins (Image à gauche, texte à droite) -->
+      <!-- 3e Encadré : Chambre de Soins (texte à gauche, image à droite) -->
       <div class="projet-container">
-        <!-- Colonne image -->
-        <div class="projet_image">
-          <img class="zoomable" src="chambre_soins.jpg" alt="Salle de soins nécessitant des améliorations" />
-        </div>
         <!-- Colonne texte -->
         <div class="projet-texte">
           <h3>Une salle de soins nécessitant des améliorations</h3>
@@ -361,6 +362,10 @@
             Le manque de matériel médical adapté, de lits confortables et d’équipements de stérilisation impacte la qualité des soins. 
             Notre association, le CVPN, s’engage à rénover cette salle et à doter le centre de matériel médical adéquat.
           </p>
+        </div>
+        <!-- Colonne image -->
+        <div class="projet_image">
+          <img class="zoomable" src="chambre_soins.jpg" alt="Salle de soins nécessitant des améliorations" />
         </div>
       </div>
     </section>

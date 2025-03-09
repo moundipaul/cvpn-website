@@ -141,6 +141,8 @@
       margin-top: 30px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
+
+    /* Colonne texte */
     .projet-texte {
       flex: 1 1 50%;
       padding-right: 20px;
@@ -158,16 +160,18 @@
       color: #555;
     }
     .projet-texte p {
-      text-align: left; /* Permet de justifier le texte à gauche */
-      max-width: none; /* On retire la limite pour ce bloc */
+      text-align: left; /* Alignement à gauche pour le texte */
+      max-width: none; 
     }
 
+    /* Colonne image */
     .projet-image {
-      flex: 1 1 50%;
+      flex: 1 1 40%;
       text-align: center;
     }
+    /* Réduction de la taille de l'image pour se rapprocher de l'exemple */
     .projet-image img {
-      max-width: 100%;
+      max-width: 80%; /* Ajustez ce pourcentage selon l’effet souhaité */
       height: auto;
       border-radius: 5px;
     }
@@ -256,13 +260,12 @@
         🔹 Accès à l’eau potable
       </p>
 
-      <!-- Bloc de présentation du Centre de Santé avec un style 2 colonnes -->
+      <!-- Bloc de présentation du Centre de Santé (texte à gauche, image à droite) -->
       <div class="projet-container">
-        <!-- Colonne de texte -->
+        <!-- Colonne texte -->
         <div class="projet-texte">
           <h3>Centre de Santé Intégré de Koupa Ngagnou</h3>
 
-          <!-- Exemple de citation / témoignage -->
           <blockquote>
             « Le Centre de Santé Intégré de Koupa Ngagnou est un établissement de soins essentiel pour la communauté locale. 
             Situé en pleine nature, il offre un accès aux soins de première nécessité aux habitants du village et des environs. »
@@ -278,11 +281,9 @@
             en initiant des projets d’amélioration des infrastructures, de fourniture d’équipements médicaux et d’accès à des soins adaptés. 
             Nous œuvrons pour renforcer cet espace de santé afin qu’il puisse répondre aux besoins croissants de la communauté.
           </p>
-          <!-- Bouton de don (facultatif dans ce bloc) -->
-          <a href="#" class="btn-donate">Faire un don</a>
         </div>
 
-        <!-- Colonne de l'image -->
+        <!-- Colonne image -->
         <div class="projet-image">
           <img src="centre_sante.jpg" alt="Construction d'un centre de santé" />
         </div>

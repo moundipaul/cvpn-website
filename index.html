@@ -78,7 +78,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: #fff;
+      color: #fff; /* Couleur du texte */
     }
     .hero-content {
       position: relative;
@@ -129,13 +129,12 @@
       margin: 0 auto;
     }
 
-    /* ---- LAYOUT DU PROJET (TEXTE A GAUCHE, IMAGE A DROITE) ---- */
+    /* ---- LAYOUT DU PROJET (STYLE 2 COLONNES) ---- */
     .projet-container {
       display: flex;
       flex-wrap: wrap;
-      /* align-items: center; <-- supprimez si vous souhaitez que le texte reste en haut
-         et l'image s'étire */
-      align-items: stretch; /* permet à l'image de s'étirer sur la hauteur */
+      align-items: center;
+      justify-content: space-between;
       background-color: #f9f9f9;
       border-radius: 8px;
       padding: 20px;
@@ -145,11 +144,8 @@
 
     /* Colonne texte */
     .projet-texte {
-      flex: 1 1 55%;
+      flex: 1 1 50%;
       padding-right: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
     }
     .projet-texte h3 {
       margin-top: 0;
@@ -164,23 +160,19 @@
       color: #555;
     }
     .projet-texte p {
-      text-align: left; /* Alignement à gauche */
+      text-align: left; /* Alignement à gauche pour le texte */
       max-width: none; 
     }
 
     /* Colonne image */
     .projet-image {
-      flex: 1 1 45%;
-      position: relative;
-      /* Pour que l'image prenne toute la hauteur disponible du conteneur */
-      display: flex;
+      flex: 1 1 40%;
+      text-align: center;
     }
+    /* Réduction de la taille de l'image pour se rapprocher de l'exemple */
     .projet-image img {
-      /* Remplit toute la zone de la colonne, 
-         en épousant le haut, le bas et le côté droit */
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* Recadre l'image si nécessaire pour remplir l'espace */
+      max-width: 80%; /* Ajustez ce pourcentage selon l’effet souhaité */
+      height: auto;
       border-radius: 5px;
     }
 

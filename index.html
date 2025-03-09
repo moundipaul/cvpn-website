@@ -172,6 +172,8 @@
       height: auto;
       border-radius: 5px;
       transition: transform 0.3s ease;
+      display: block;
+      margin: 10px auto; /* Espacement entre les images */
     }
 
     /* ---- BOUTON DE DON ---- */
@@ -292,7 +294,7 @@
         🔹 Accès à l’eau potable
       </p>
 
-      <!-- Bloc de présentation du Centre de Santé -->
+      <!-- Bloc de présentation (Centre de Santé + Laboratoire) -->
       <div class="projet-container">
         <!-- Colonne texte -->
         <div class="projet-texte">
@@ -311,13 +313,35 @@
             en initiant des projets d’amélioration des infrastructures, de fourniture d’équipements médicaux et d’accès à des soins adaptés. 
             Nous œuvrons pour renforcer cet espace de santé afin qu’il puisse répondre aux besoins croissants de la communauté.
           </p>
+
+          <!-- Nouveau bloc de description pour le laboratoire -->
+          <h3>Un laboratoire en quête d’améliorations pour de meilleurs soins</h3>
+          <p>
+            Les images témoignent des conditions actuelles du laboratoire du Centre de Santé Intégré de Koupa Ngagnou. 
+            Bien que l’engagement des soignants soit indéniable, le manque d’équipements modernes et de matériel de diagnostic 
+            limite la qualité des soins offerts à la communauté. L’absence d’instruments médicaux adaptés, de réactifs de laboratoire 
+            et d’un espace mieux équipé entrave la rapidité et la précision des analyses médicales.
+          </p>
+          <p>
+            Notre association, le Cercle pour la Promotion du Village de Nkoupa Ngagnou (CVPN), s’engage à améliorer ces infrastructures 
+            pour garantir des diagnostics plus fiables et un cadre de travail optimal pour le personnel médical. Votre soutien peut faire la différence !
+          </p>
+          <p>
+            📢 Aidez-nous à moderniser ce laboratoire en contribuant à l’acquisition de matériel médical et en soutenant nos initiatives 
+            pour renforcer l’accès aux soins dans le village.
+          </p>
         </div>
 
-        <!-- Colonne image avec zoom sur clic -->
+        <!-- Colonne images (toutes zoomables) -->
         <div class="image2">
-          <img id="zoomable" src="centre_sante.jpg" alt="Construction d'un centre de santé" />
+          <!-- Image existante -->
+          <img class="zoomable" src="centre_sante.jpg" alt="Construction d'un centre de santé" />
+          <!-- Nouvelles images logo1 / logo2 -->
+          <img class="zoomable" src="logo1.jpg" alt="Logo 1 du laboratoire" />
+          <img class="zoomable" src="logo2.jpg" alt="Logo 2 du laboratoire" />
         </div>
       </div>
+      <!-- Fin du bloc projet-container -->
     </section>
 
     <section id="soutenir">
@@ -351,20 +375,23 @@
   </div>
 
   <script>
-    // Sélection du modal et de l'image cliquable
+    // Gestion du modal et du zoom pour toutes les images avec la classe "zoomable"
     var modal = document.getElementById("myModal");
-    var img = document.getElementById("zoomable");
     var modalImg = document.getElementById("imgZoom");
     var captionText = document.getElementById("caption");
 
-    // Affiche le modal avec l'image zoomée lors du clic
-    img.onclick = function(){
-      modal.style.display = "block";
-      modalImg.src = this.src;
-      captionText.innerHTML = this.alt;
-    }
+    // Récupère toutes les images "zoomable"
+    var zoomableImages = document.querySelectorAll('.zoomable');
 
-    // Ferme le modal lorsque l'utilisateur clique sur la croix
+    zoomableImages.forEach(function(image) {
+      image.addEventListener('click', function() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+      });
+    });
+
+    // Fermer le modal lorsqu'on clique sur la croix
     var span = document.getElementsByClassName("close")[0];
     span.onclick = function() {
       modal.style.display = "none";

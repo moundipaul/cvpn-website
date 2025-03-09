@@ -162,7 +162,7 @@
     }
 
     /* ---- COLONNE IMAGES (sans rogner) ---- */
-    .image2 {
+    .projet_image {
       flex: 1 1 40%;
       text-align: center;
       display: flex;
@@ -170,10 +170,10 @@
       gap: 10px;               /* Espacement entre les images */
       align-items: center;     /* Centre horizontalement */
     }
-    .image2 img {
+    .projet_image img {
       /* Limite la taille des images pour qu'elles soient plus petites
          sans rogner (height: auto) */
-      max-width: 300px; 
+      max-width: 500px; 
       height: auto;
       border-radius: 5px;
       cursor: pointer;
@@ -319,7 +319,7 @@
           </p>
         </div>
         <!-- Colonne image -->
-        <div class="image2">
+        <div class="projet_image">
           <img class="zoomable" src="centre_sante.jpg" alt="Construction d'un centre de santé" />
         </div>
       </div>
@@ -327,7 +327,7 @@
       <!-- 2e Encadré : Laboratoire (2 images empilées) -->
       <div class="projet-container">
         <!-- Colonne images -->
-        <div class="image2">
+        <div class="projet_image">
           <img class="zoomable" src="labo1.jpg" alt="Labo 1 du laboratoire" />
           <img class="zoomable" src="labo2.jpg" alt="Labo 2 du laboratoire" />
         </div>

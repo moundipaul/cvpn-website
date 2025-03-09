@@ -80,17 +80,15 @@
       text-align: center;
       color: #fff; /* Couleur du texte */
     }
-    /* Conteneur de texte avec un fond semi-transparent */
     .hero-content {
       position: relative;
       z-index: 1;
       max-width: 800px;
       margin: 0 20px;
-      background: rgba(0, 0, 0, 0.4); /* Boîte sombre derrière le texte */
+      background: rgba(0, 0, 0, 0.4);
       padding: 20px;
       border-radius: 8px;
     }
-    /* Styles du titre et paragraphe pour plus de lisibilité */
     .hero-content h2 {
       font-size: 2.5rem;
       font-weight: bold;
@@ -131,22 +129,47 @@
       margin: 0 auto;
     }
 
-    /* ---- STYLE POUR L'IMAGE ET SA DESCRIPTION ---- */
+    /* ---- LAYOUT DU PROJET (STYLE 2 COLONNES) ---- */
+    .projet-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 30px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .projet-texte {
+      flex: 1 1 50%;
+      padding-right: 20px;
+    }
+    .projet-texte h3 {
+      margin-top: 0;
+      color: #004080;
+      font-size: 1.4rem;
+    }
+    .projet-texte blockquote {
+      font-style: italic;
+      margin: 20px 0;
+      padding-left: 20px;
+      border-left: 4px solid #ccc;
+      color: #555;
+    }
+    .projet-texte p {
+      text-align: left; /* Permet de justifier le texte à gauche */
+      max-width: none; /* On retire la limite pour ce bloc */
+    }
+
     .projet-image {
+      flex: 1 1 50%;
       text-align: center;
-      margin-top: 20px;
     }
     .projet-image img {
       max-width: 100%;
       height: auto;
-      margin-bottom: 10px;
-    }
-    .projet-description {
-      font-size: 1rem;
-      color: #333;
-      text-align: center;
-      margin: 0 auto;
-      max-width: 80%;
+      border-radius: 5px;
     }
 
     /* ---- BOUTON DE DON ---- */
@@ -223,6 +246,7 @@
       </p>
     </section>
 
+    <!-- SECTION PROJETS D'AVENIR -->
     <section id="futurs-projets">
       <h2>Nos projets d'avenir</h2>
       <p>
@@ -231,18 +255,39 @@
         🔹 Développement des infrastructures locales<br>
         🔹 Accès à l’eau potable
       </p>
-      <!-- Affichage de l'image et du descriptif non modifiable pour "Construction d'un centre de santé" -->
-      <div class="projet-image">
-        <img src="centre_sante.jpg" alt="Construction d'un centre de santé" />
-        <div class="projet-description">
-          <p>Centre de Santé Intégré de Koupa Ngagnou
-Le Centre de Santé Intégré de Koupa Ngagnou est un établissement de soins essentiel pour la communauté locale. Situé en pleine nature, il offre un accès aux soins de première nécessité aux habitants du village et des environs. Grâce à son infrastructure simple mais fonctionnelle, le centre joue un rôle clé dans l’amélioration de la santé et du bien-être de la population.
 
-L’accès à l’eau potable est facilité par un puits sécurisé, garantissant une meilleure hygiène et réduisant les maladies liées à l’eau insalubre. L’engagement des soignants et du personnel médical contribue chaque jour à fournir des soins de qualité malgré les ressources limitées.
+      <!-- Bloc de présentation du Centre de Santé avec un style 2 colonnes -->
+      <div class="projet-container">
+        <!-- Colonne de texte -->
+        <div class="projet-texte">
+          <h3>Centre de Santé Intégré de Koupa Ngagnou</h3>
 
-Notre association, le Cercle pour la Promotion du Village de Nkoupa Ngagnou (CVPN), soutient activement ce centre en initiant des projets d’amélioration des infrastructures, de fourniture d’équipements médicaux et d’accès à des soins adaptés. Nous œuvrons pour renforcer cet espace de santé afin qu’il puisse répondre aux besoins croissants de la communauté.</p>
+          <!-- Exemple de citation / témoignage -->
+          <blockquote>
+            « Le Centre de Santé Intégré de Koupa Ngagnou est un établissement de soins essentiel pour la communauté locale. 
+            Situé en pleine nature, il offre un accès aux soins de première nécessité aux habitants du village et des environs. »
+          </blockquote>
+
+          <p>
+            Grâce à son infrastructure simple mais fonctionnelle, le centre joue un rôle clé dans l’amélioration de la santé 
+            et du bien-être de la population. L’accès à l’eau potable est facilité par un puits sécurisé, garantissant une meilleure hygiène 
+            et réduisant les maladies liées à l’eau insalubre.
+          </p>
+          <p>
+            Notre association, le Cercle pour la Promotion du Village de Nkoupa Ngagnou (CVPN), soutient activement ce centre 
+            en initiant des projets d’amélioration des infrastructures, de fourniture d’équipements médicaux et d’accès à des soins adaptés. 
+            Nous œuvrons pour renforcer cet espace de santé afin qu’il puisse répondre aux besoins croissants de la communauté.
+          </p>
+          <!-- Bouton de don (facultatif dans ce bloc) -->
+          <a href="#" class="btn-donate">Faire un don</a>
+        </div>
+
+        <!-- Colonne de l'image -->
+        <div class="projet-image">
+          <img src="centre_sante.jpg" alt="Construction d'un centre de santé" />
         </div>
       </div>
+      <!-- Fin du bloc projet-container -->
     </section>
 
     <section id="soutenir">
@@ -267,5 +312,6 @@ Notre association, le Cercle pour la Promotion du Village de Nkoupa Ngagnou (CVP
   <footer>
     <p>&copy; 2024 CVPN - Tous droits réservés</p>
   </footer>
+
 </body>
 </html>

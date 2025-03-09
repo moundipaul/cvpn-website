@@ -132,7 +132,7 @@
     .projet-container {
       display: flex;
       flex-wrap: wrap;
-      align-items: center; /* ou 'stretch' selon l'effet souhaité */
+      align-items: center; 
       justify-content: space-between;
       background-color: #f9f9f9;
       border-radius: 8px;
@@ -164,20 +164,22 @@
     /* ---- COLONNE IMAGE AVEC ZOOM ---- */
     .image2 {
       flex: 1 1 40%;
-      text-align: center;
       display: flex;
-      flex-direction: column;   /* Empile verticalement */
-      align-items: stretch;     /* S'étire en hauteur */
+      flex-direction: column; /* On empile verticalement si 2 images */
+      gap: 10px;
     }
-    /* Pour forcer les images à prendre 50% de la hauteur du bloc */
     .image2 img {
-      flex: 1;                 /* Remplit la hauteur disponible */
-      width: 100%;             /* Largeur 100% */
-      object-fit: cover;       /* Remplir l'espace en recadrant si nécessaire */
-      margin: 5px 0;           /* Petite marge entre les images */
+      width: 100%;
+      object-fit: cover;
       border-radius: 5px;
       cursor: pointer;
       transition: transform 0.3s ease;
+    }
+
+    /* ---- RÈGLE SPÉCIALE POUR LA PREMIÈRE IMAGE (labo1) ---- */
+    .labo1 {
+      max-height: 250px; /* Ajustez cette hauteur pour réduire la taille */
+      object-fit: contain; 
     }
 
     /* ---- BOUTON DE DON ---- */
@@ -297,7 +299,7 @@
         🔹 Accès à l’eau potable
       </p>
 
-      <!-- 1er Encadré : Centre de Santé (texte à gauche, image à droite) -->
+      <!-- 1er Encadré : Centre de Santé -->
       <div class="projet-container">
         <!-- Colonne texte -->
         <div class="projet-texte">
@@ -322,13 +324,14 @@
           <img class="zoomable" src="centre_sante.jpg" alt="Construction d'un centre de santé" />
         </div>
       </div>
-      <!-- Fin du 1er Encadré -->
 
-      <!-- 2e Encadré : Laboratoire (images à gauche, texte à droite) -->
-      <div class="projet-container" style="align-items: stretch;">
-        <!-- Colonne images : 2 images empilées, occupant toute la hauteur -->
+      <!-- 2e Encadré : Laboratoire (2 images empilées, 1ere plus petite) -->
+      <div class="projet-container">
+        <!-- Colonne images -->
         <div class="image2">
-          <img class="zoomable" src="labo1.jpg" alt="Labo 1 du laboratoire" />
+          <!-- Première image réduite -->
+          <img class="zoomable labo1" src="labo1.jpg" alt="Labo 1 du laboratoire" />
+          <!-- Deuxième image taille normale -->
           <img class="zoomable" src="labo2.jpg" alt="Labo 2 du laboratoire" />
         </div>
         <!-- Colonne texte -->
@@ -350,7 +353,6 @@
           </p>
         </div>
       </div>
-      <!-- Fin du 2e Encadré -->
     </section>
 
     <section id="soutenir">
